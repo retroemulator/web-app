@@ -1,0 +1,30 @@
+.Emulator-header {
+    padding-top: 0.5rem;
+    padding-bottom: 1rem;
+}
+
+.Emulator-back {
+    color: #ffffff;
+    font-size: 1.75rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.Emulator-back:hover {
+    color: #bdbdbd;
+}
+
+.Emulator-video-stream {
+    background-color: black;
+}
+
+.Emulator-loading-text {
+    color: #ffffff;
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.Emulator-main {
+    text-align: center;
+    padding-top: 2rem;
+}

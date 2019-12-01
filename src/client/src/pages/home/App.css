@@ -1,0 +1,47 @@
+.App {}
+
+.App-header {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-left: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 1rem;
+}
+
+.App-console-col {
+  padding-left: 0;
+  padding-right: 0;
+  background-color: #3c3c3c;
+  height: 100%;
+  position: fixed;
+  width: 275px;
+}
+
+.App-console-col-item {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #ffffff;
+  text-decoration: none;
+  cursor: pointer;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.App-console-col-item-text {
+  margin-left: 1rem;
+}
+
+.App-console-col-item:hover {
+  background-color: #757575;
+  text-decoration: none;
+}
+
+.App-console-col-item-selected {
+  background-color: #757575;
+}
+
+.App-console-grid {
+  margin-left: 275px;
+  padding: 30px;
+}

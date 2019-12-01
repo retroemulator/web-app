@@ -1,0 +1,18 @@
+.Grid {}
+
+.Grid-item-img {
+    width: 100%;
+    margin-bottom: 25px;
+    border-radius: 15px;
+    cursor: pointer;
+    opacity: 0.75;
+}
+
+.Grid-item-img:hover {
+    opacity: 1;
+}
+
+.Grid-empty {
+    color: #fff;
+    font-size: 1.75rem;
+}
