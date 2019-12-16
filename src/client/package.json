@@ -1,7 +1,6 @@
 {
-  "name": "game-emulator-main-app-client",
+  "name": "retroemulator-web-app-client",
   "version": "1.0.0",
-  "private": true,
   "dependencies": {
     "bootstrap": "^4.3.1",
     "react": "^16.12.0",
