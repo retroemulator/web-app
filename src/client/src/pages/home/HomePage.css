@@ -1,0 +1,38 @@
+.HomePage {
+  height: 100%;
+}
+
+.HomePage-row {
+  height: 100%;
+}
+
+.HomePage-panel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.HomePage-panel-left {
+  border-bottom: none;
+  border-right: 1px dashed #9FA8DA;
+}
+
+@media (max-width: 768px) {
+  .HomePage-panel-left {
+    border-bottom: 1px dashed #9FA8DA;
+    border-right: none;
+  }
+}
+
+.HomePage-button-title {
+  text-align: left;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #9FA8DA;
+}
+
+.HomePage-button-description {
+  text-align: left;
+  font-size: 1.25rem;
+  color: #9FA8DA;
+}
