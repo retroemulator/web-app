@@ -1,43 +1,21 @@
-.JoinSessionPage-container {
-  padding-top: 1rem;
-  padding-left: 3rem;
-  padding-right: 3rem;
-}
-
-.JoinSessionPage-back-button {
-  font-size: 1.75rem;
-  cursor: pointer;
-}
-
-.JoinSessionPage-back-button:hover {
-  color: #9FA8DA;
-}
-
 .JoinSessionPage-text-container {
   padding-top: 3rem;
+  text-align: center;
 }
 
 .JoinSessionPage-title {
   font-size: 2rem;
 }
 
-.JoinSessionPage-code-input-cell {
-  width: 4rem;
-  height: 4rem;
-  padding: 1rem 1rem 1.1rem 1.4rem;
-  font-weight: 700;
-  font-size: 2rem;
-  color: #ffffff;
-  background-color: #5C6BC0;
-  border: none;
-  border-radius: 3px;
-  margin: 0.5rem;
-  text-transform: uppercase;
+.JoinSessionPage-code-input {
+  padding-top: 2rem;
 }
 
-.JoinSessionPage-code-input-cell:focus {
-  outline: none;
-  border-color: #9FA8DA;
-  border-width: 1px;
-  border-style: solid;
+.JoinSessionPage-error {
+  padding-top: 1rem;
+  color: #B71C1C;
+}
+
+.JoinSessionPage-submit-button {
+  padding-top: 2rem;
 }

@@ -1,0 +1,14 @@
+.PrimaryLayout-container {
+  padding-top: 1rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+
+.PrimaryLayout-back-button {
+  font-size: 1.75rem;
+  cursor: pointer;
+}
+
+.PrimaryLayout-back-button:hover {
+  color: #9FA8DA;
+}
