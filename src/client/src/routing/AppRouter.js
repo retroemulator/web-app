@@ -6,29 +6,17 @@ import {
   Switch,
 } from 'react-router-dom';
 
-// TODO: update this
 import HomePage from '../pages/home';
-
-// TODO: remove this
-import HomePageOld from '../pages/home-old';
-import EmulatorPage from '../pages/emulator';
+import JoinSessionPage from '../pages/join-session';
 
 const AppRouter = () => (
   <BrowserRouter>
     <Switch>
       <Route path="/" component={HomePage} exact />
 
-      <Route
-        path="/home"
-        component={HomePageOld}
-        exact
-      />
+      <Route path="/join-session" component={JoinSessionPage} exact />
 
-      <Route
-        path="/stream"
-        component={EmulatorPage}
-        exact
-      />
+
 
       <Route
         path="*"

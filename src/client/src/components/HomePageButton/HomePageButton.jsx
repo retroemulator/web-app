@@ -1,6 +1,5 @@
 import React from 'react';
 import Button from '@atlaskit/button';
-import * as colors from '@atlaskit/theme/colors';
 import createCustomTheme from '../../utils/themes/createCustomTheme';
 import './HomePageButton.css';
 
