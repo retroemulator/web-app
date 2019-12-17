@@ -31,13 +31,18 @@ class CodeInput extends React.Component {
     }
 
     if (filled) {
-      this.props.onComplete && this.props.onComplete(entries.join('').toUpperCase());
+      this.props.onComplete && this.props.onComplete(entries.join(''));
     } else {
       this.props.onIncomplete && this.props.onIncomplete();
     }
   }
 
   handleCellChange(event, index) {
+    const re = /^[0-9\b]+$/;
+    if (event.target.value !== '' && !re.test(event.target.value)) {
+      return;
+    }
+
     const cellValues = {
       ...this.state.cellValues,
       [index]: event.target.value,
@@ -45,11 +50,8 @@ class CodeInput extends React.Component {
     this.setState({ cellValues });
     this.checkCellValues(cellValues);
 
-    if (event.keyCode === 8) {
-      if (index === 0) return;
-      this.cellRef[index - 1].focus();
-    } else {
-      if (index === this.props.length - 1) return;
+    if (index === this.props.length - 1) return;
+    if (event.target.value !== '') {
       this.cellRef[index + 1].focus();
     }
   }
@@ -66,7 +68,8 @@ class CodeInput extends React.Component {
                 className="CodeInput-cell"
                 maxLength="1"
                 type="text"
-                onKeyUp={e => this.handleCellChange(e, i)}
+                value={this.state.cellValues[i] || ''}
+                onChange={e => this.handleCellChange(e, i)}
               />
             );
           })

@@ -36,7 +36,7 @@ class JoinSessionPage extends React.Component {
     super(props);
     this.state = {
       codeInputValue: '',
-      error: null,
+      error: '',
     };
     this.handleBackButton = this.handleBackButton.bind(this);
     this.handleIncompleteCodeInput = this.handleIncompleteCodeInput.bind(this);
@@ -52,8 +52,8 @@ class JoinSessionPage extends React.Component {
     this.setState({ codeInputValue: '' });
   }
 
-  handleCompleteCodeInput(val) {
-    this.setState({ codeInputValue: val.toUpperCase() })
+  handleCompleteCodeInput(value) {
+    this.setState({ codeInputValue: value })
   }
 
   handleSubmitButton() {
