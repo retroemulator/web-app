@@ -19,3 +19,8 @@
 .JoinSessionPage-submit-button {
   padding-top: 2rem;
 }
+
+.JoinSessionPage-spinner {
+  padding-top: 3rem;
+  text-align: center;
+}

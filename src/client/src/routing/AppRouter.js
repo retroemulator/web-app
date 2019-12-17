@@ -12,11 +12,17 @@ import JoinSessionPage from '../pages/join-session';
 const AppRouter = () => (
   <BrowserRouter>
     <Switch>
-      <Route path="/" component={HomePage} exact />
+      <Route
+        path="/"
+        component={HomePage}
+        exact
+      />
 
-      <Route path="/join-session" component={JoinSessionPage} exact />
-
-
+      <Route
+        path="/join-session"
+        component={() => <JoinSessionPage defaultLoadDelay={500} />}
+        exact
+      />
 
       <Route
         path="*"

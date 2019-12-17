@@ -2,6 +2,7 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 import Button from '@atlaskit/button';
 import CodeInput from '../../components/CodeInput';
+import Spinner from '../../components/Spinner';
 import PrimaryLayout from '../../layout/PrimaryLayout';
 import createCustomTheme from '../../utils/themes/createCustomTheme';
 import './JoinSessionPage.css';
@@ -37,11 +38,17 @@ class JoinSessionPage extends React.Component {
     this.state = {
       codeInputValue: '',
       error: '',
+      loading: false,
     };
     this.handleBackButton = this.handleBackButton.bind(this);
     this.handleIncompleteCodeInput = this.handleIncompleteCodeInput.bind(this);
     this.handleCompleteCodeInput = this.handleCompleteCodeInput.bind(this);
     this.handleSubmitButton = this.handleSubmitButton.bind(this);
+  }
+
+  componentDidMount() {
+    this.setState({ loading: true });
+    setTimeout(() => this.setState({ loading: false }), this.props.defaultLoadDelay || 0);
   }
 
   handleBackButton() {
@@ -69,33 +76,40 @@ class JoinSessionPage extends React.Component {
       <PrimaryLayout
         onBackClick={this.handleBackButton}
       >
-        <div className="JoinSessionPage-text-container">
-          <div className="JoinSessionPage-title">
-            Enter your 5-digit session code
+        {this.state.loading && (
+          <div className="JoinSessionPage-spinner">
+            <Spinner />
           </div>
-          <div className="JoinSessionPage-code-input">
-            <CodeInput
-              length={5}
-              onIncomplete={this.handleIncompleteCodeInput}
-              onComplete={this.handleCompleteCodeInput}
-            />
-          </div>
-          {this.state.error && (
-            <div className="JoinSessionPage-error">
-              {this.state.error}
+        )}
+        {!this.state.loading && (
+          <div className="JoinSessionPage-text-container">
+            <div className="JoinSessionPage-title">
+              Enter your 5-digit session code
             </div>
-          )}
-          <div className="JoinSessionPage-submit-button">
-            <Button
-              appearance="primary"
-              theme={createCustomTheme(buttonTheme)}
-              isDisabled={this.state.codeInputValue.length === 0}
-              onClick={this.handleSubmitButton}
-            >
-              Connect to session
-            </Button>
+            <div className="JoinSessionPage-code-input">
+              <CodeInput
+                length={5}
+                onIncomplete={this.handleIncompleteCodeInput}
+                onComplete={this.handleCompleteCodeInput}
+              />
+            </div>
+            {this.state.error && (
+              <div className="JoinSessionPage-error">
+                {this.state.error}
+              </div>
+            )}
+            <div className="JoinSessionPage-submit-button">
+              <Button
+                appearance="primary"
+                theme={createCustomTheme(buttonTheme)}
+                isDisabled={this.state.codeInputValue.length === 0}
+                onClick={this.handleSubmitButton}
+              >
+                Connect to session
+              </Button>
+            </div>
           </div>
-        </div>
+        )}
       </PrimaryLayout>
     );
   }
