@@ -1,0 +1,20 @@
+.CodeInput-cell {
+  width: 4rem;
+  height: 4rem;
+  padding: 1rem 1rem 1.1rem 1.4rem;
+  font-weight: 700;
+  font-size: 2rem;
+  color: #ffffff;
+  background-color: #5C6BC0;
+  border: none;
+  border-radius: 3px;
+  margin: 0.5rem;
+  text-transform: uppercase;
+}
+
+.CodeInput-cell:focus {
+  outline: none;
+  border-color: #9FA8DA;
+  border-width: 1px;
+  border-style: solid;
+}
