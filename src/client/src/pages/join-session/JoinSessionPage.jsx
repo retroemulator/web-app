@@ -11,8 +11,8 @@ const buttonTheme = {
   primary: {
     background: {
       default: '#3F51B5',
-      hover: '#3F51B5',
-      active: '#3F51B5',
+      hover: '#5C6BC0',
+      active: '#5C6BC0',
     },
     boxShadow: {
       default: `0 4px 0 0 #303F9F`,

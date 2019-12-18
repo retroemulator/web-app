@@ -1,7 +1,7 @@
 import React from 'react';
 import './CodeInput.css';
 
-class CodeInput extends React.Component {
+export default class CodeInput extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -78,5 +78,3 @@ class CodeInput extends React.Component {
     );
   }
 }
-
-export default CodeInput;

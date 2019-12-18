@@ -9,8 +9,8 @@ const buttonTheme = {
     padding: '2rem',
     background: {
       default: '#3F51B5',
-      hover: '#3F51B5',
-      active: '#3F51B5',
+      hover: '#5C6BC0',
+      active: '#5C6BC0',
     },
     boxShadow: {
       default: `0 8px 0 0 #303F9F`,
@@ -30,7 +30,8 @@ const buttonTheme = {
   },
 };
 
-function HomePageButton(props) {
+// TODO: rename this to be a generic large button
+export default function HomePageButton(props) {
   const { icon, title, description } = props;
   return (
     <Button
@@ -45,5 +46,3 @@ function HomePageButton(props) {
     </Button>
   );
 }
-
-export default HomePageButton;

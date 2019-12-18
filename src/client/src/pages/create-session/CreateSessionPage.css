@@ -1,0 +1,45 @@
+.CreateSessionPage-text-container {
+  padding-top: 3rem;
+}
+
+.CreateSessionPage-title {
+  font-size: 2rem;
+}
+
+.CreateSessionPage-spinner {
+  padding-top: 3rem;
+  text-align: center;
+}
+
+.CreateSessionPage-item-container {
+  padding-top: 1rem;
+}
+
+.CreateSessionPage-item {
+  background-color: #9FA8DA;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  height: 120px;
+  position: relative;
+  border-radius: 3px;
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.CreateSessionPage-item:hover {
+  opacity: 1;
+}
+
+.CreateSessionPage-item-image {
+  padding: 1rem 2.5rem 1rem 2.5rem;
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
