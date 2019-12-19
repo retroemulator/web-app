@@ -8,22 +8,22 @@ import './CreateSessionPage.css';
 const CONSOLES = [
   {
     consoleId: 'gba',
-    imageUrl: 'https://storage.googleapis.com/game-emulator/resources/gba.png',
+    imageUrl: 'https://storage.googleapis.com/game-emulator/resources/md/gba.png',
     title: 'Game Boy Advance',
   },
   {
     consoleId: 'nes',
-    imageUrl: 'https://storage.googleapis.com/game-emulator/resources/nes.png',
+    imageUrl: 'https://storage.googleapis.com/game-emulator/resources/md/nes.png',
     title: 'Nintendo Entertainment System',
   },
   {
     consoleId: 'snes',
-    imageUrl: 'https://storage.googleapis.com/game-emulator/resources/snes.png',
+    imageUrl: 'https://storage.googleapis.com/game-emulator/resources/md/snes.png',
     title: 'Super Nintendo Entertainment System',
   },
   {
     consoleId: 'n64',
-    imageUrl: 'https://storage.googleapis.com/game-emulator/resources/n64.png',
+    imageUrl: 'https://storage.googleapis.com/game-emulator/resources/md/n64.png',
     title: 'Nintendo 64',
   },
 ];
