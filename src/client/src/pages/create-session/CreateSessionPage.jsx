@@ -4,44 +4,26 @@ import Spinner from '../../components/Spinner';
 import PrimaryLayout from '../../layout/PrimaryLayout';
 import './CreateSessionPage.css';
 
-// TODO: this hardcodes the number of consoles available, remove this later
-const CONSOLES = [
-  {
-    consoleId: 'gba',
-    imageUrl: 'https://storage.googleapis.com/game-emulator/resources/md/gba.png',
-    title: 'Game Boy Advance',
-  },
-  {
-    consoleId: 'nes',
-    imageUrl: 'https://storage.googleapis.com/game-emulator/resources/md/nes.png',
-    title: 'Nintendo Entertainment System',
-  },
-  {
-    consoleId: 'snes',
-    imageUrl: 'https://storage.googleapis.com/game-emulator/resources/md/snes.png',
-    title: 'Super Nintendo Entertainment System',
-  },
-  {
-    consoleId: 'n64',
-    imageUrl: 'https://storage.googleapis.com/game-emulator/resources/md/n64.png',
-    title: 'Nintendo 64',
-  },
-];
-
 class CreateSessionPage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       loading: false,
+      consoles: [],
     }
     this.handleBackButton = this.handleBackButton.bind(this);
   }
 
   componentDidMount() {
     this.setState({ loading: true });
-    setTimeout(() => this.setState({ loading: false }), this.props.defaultLoadDelay || 0);
-
-    // TODO: should make query to the server to get listing of all consoles
+    fetch('http://localhost:3001/api/v1/console')
+      .then(res => res.json())
+      .then(res => {
+        this.setState({
+          consoles: res.data.consoles,
+          loading: false,
+        });
+      });
   }
 
   handleBackButton() {
@@ -70,7 +52,7 @@ class CreateSessionPage extends React.Component {
               Select a console
             </div>
             <div className="CreateSessionPage-item-container">
-              {CONSOLES.map((item, i) => (
+              {this.state.consoles.map((item, i) => (
                 <div
                   key={item.consoleId}
                   className="CreateSessionPage-item"
