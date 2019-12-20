@@ -9,13 +9,14 @@ import {
 import HomePage from '../pages/home';
 import CreateSessionPage from '../pages/create-session';
 import JoinSessionPage from '../pages/join-session';
+import StreamPage from '../pages/stream';
 
 const AppRouter = () => (
   <BrowserRouter>
     <Switch>
       <Route
         path="/"
-        component={HomePage}
+        component={() => <HomePage />}
         exact
       />
 
@@ -27,6 +28,12 @@ const AppRouter = () => (
       <Route
         path="/join-session"
         component={() => <JoinSessionPage defaultLoadDelay={500} />}
+        exact
+      />
+
+      <Route
+        path="/stream"
+        component={() => <StreamPage />}
         exact
       />
 
