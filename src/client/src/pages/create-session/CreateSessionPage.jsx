@@ -1,8 +1,14 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import Enum from 'enum';
 import Spinner from '../../components/Spinner';
 import PrimaryLayout from '../../layout/PrimaryLayout';
 import './CreateSessionPage.css';
+
+const ActivePage = new Enum({
+  USER_SELECT_CONSOLE: 1,
+  USER_UPLOAD_ROM: 2,
+});
 
 class CreateSessionPage extends React.Component {
   constructor(props) {
@@ -10,8 +16,11 @@ class CreateSessionPage extends React.Component {
     this.state = {
       loading: false,
       consoles: [],
+      consoleItemSelected: null,
+      activePage: ActivePage.USER_SELECT_CONSOLE,
     }
     this.handleBackButton = this.handleBackButton.bind(this);
+    this.handleConsoleItemClick = this.handleConsoleItemClick.bind(this);
   }
 
   componentDidMount() {
@@ -22,27 +31,44 @@ class CreateSessionPage extends React.Component {
         this.setState({
           consoles: res.data.consoles,
           loading: false,
+          activePage: ActivePage.USER_SELECT_CONSOLE,
         });
       });
   }
 
   handleBackButton() {
-    this.props.history.push('/');
+    switch (this.state.activePage) {
+      case ActivePage.USER_SELECT_CONSOLE:
+        this.props.history.push('/');
+        break;
+      case ActivePage.USER_UPLOAD_ROM:
+      default:
+        this.setState({
+          activePage: ActivePage.USER_SELECT_CONSOLE,
+          consoleItemSelected: null,
+        });
+        break;
+    }
   }
 
-  handleItemClick({ consoleId }) {
+  handleConsoleItemClick(item) {
+    this.setState({
+      consoleItemSelected: item,
+      activePage: ActivePage.USER_UPLOAD_ROM,
+    });
+
     // this.setState({ loading: true });
-    fetch('http://localhost:3001/api/v1/create-session', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ consoleId }),
-    })
-      .then(res => res.json())
-      .then(res => {
-        console.log(res);
-      });
+    // fetch('http://localhost:3001/api/v1/create-session', {
+    //   method: 'POST',
+    //   headers: {
+    //     'Content-Type': 'application/json',
+    //   },
+    //   body: JSON.stringify({ consoleId }),
+    // })
+    //   .then(res => res.json())
+    //   .then(res => {
+    //     console.log(res);
+    //   });
   }
 
   render() {
@@ -55,7 +81,7 @@ class CreateSessionPage extends React.Component {
             <Spinner />
           </div>
         )}
-        {!this.state.loading && (
+        {!this.state.loading && this.state.activePage === ActivePage.USER_SELECT_CONSOLE && (
           <div className="CreateSessionPage-text-container">
             <div className="CreateSessionPage-title">
               Select a console
@@ -65,7 +91,7 @@ class CreateSessionPage extends React.Component {
                 <div
                   key={item.consoleId}
                   className="CreateSessionPage-item"
-                  onClick={() => this.handleItemClick(item)}
+                  onClick={() => this.handleConsoleItemClick(item)}
                 >
                   <img
                     className="CreateSessionPage-item-image"
@@ -74,6 +100,16 @@ class CreateSessionPage extends React.Component {
                   />
                 </div>
               ))}
+            </div>
+          </div>
+        )}
+        {!this.state.loading && this.state.activePage === ActivePage.USER_UPLOAD_ROM && (
+          <div className="CreateSessionPage-text-container">
+            <div className="CreateSessionPage-title">
+              Upload ROM file
+            </div>
+            <div className="CreateSessionPage-item-container">
+              {/* TODO */}
             </div>
           </div>
         )}
