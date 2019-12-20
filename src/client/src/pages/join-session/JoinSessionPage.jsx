@@ -68,7 +68,7 @@ class JoinSessionPage extends React.Component {
     if (codeInputValue === undefined || codeInputValue.length === 0) return;
 
     // TODO: make request to the SessionService
-    console.log('request to SessionService', codeInputValue);
+    console.log('request to SessionService', codeInputValue.toUpperCase());
   }
 
   render() {

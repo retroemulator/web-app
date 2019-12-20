@@ -30,10 +30,19 @@ class CreateSessionPage extends React.Component {
     this.props.history.push('/');
   }
 
-  handleItemClick(item) {
-    // TODO: make request to the SessionService to spin up a new Docker container
-    // for running the emulator + video stream
-    console.log(item);
+  handleItemClick({ consoleId }) {
+    // this.setState({ loading: true });
+    fetch('http://localhost:3001/api/v1/create-session', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ consoleId }),
+    })
+      .then(res => res.json())
+      .then(res => {
+        console.log(res);
+      });
   }
 
   render() {

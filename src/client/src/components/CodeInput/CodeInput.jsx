@@ -38,7 +38,7 @@ export default class CodeInput extends React.Component {
   }
 
   handleCellChange(event, index) {
-    const re = /^[0-9\b]+$/;
+    const re = /^[0-9a-zA-Z\b]+$/;
     if (event.target.value !== '' && !re.test(event.target.value)) {
       return;
     }
