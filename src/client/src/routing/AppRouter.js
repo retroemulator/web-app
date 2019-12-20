@@ -32,7 +32,7 @@ const AppRouter = () => (
       />
 
       <Route
-        path="/stream"
+        path="/stream/:sessionId"
         component={() => <StreamPage />}
         exact
       />
