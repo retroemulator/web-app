@@ -81,10 +81,10 @@
   resolved "https://registry.yarnpkg.com/@protobufjs/utf8/-/utf8-1.1.0.tgz#a777360b5b39a1a2e5106f8e858f2fd2d060c570"
   integrity sha1-p3c2C1s5oaLlEG+OhY8v0tBgxXA=
 
-"@retroemulator/core@^1.0.10":
-  version "1.0.10"
-  resolved "https://registry.yarnpkg.com/@retroemulator/core/-/core-1.0.10.tgz#c0beddc61d3199b9fbd37d3e5dea92f64515e359"
-  integrity sha512-7lu6+mvV1ep1BdDiqiyRcX/Q4G+R7GDhR3QFSUUrQLFTMObxBvJPoQwkpcd8tGJCiXf34zdqs0rq78M72N/D3A==
+"@retroemulator/core@^1.0.11":
+  version "1.0.11"
+  resolved "https://registry.yarnpkg.com/@retroemulator/core/-/core-1.0.11.tgz#f62623e6cb5d0dd2eb76848f1dc5c85e5b878e42"
+  integrity sha512-aQjEJaAs3VFgkfKtAhbWnmXAQ2nrMt9Qtv42KxpH/u9tPTmWy69fKMKtgSglCce+UOWNkGI7Yt1WiFyr9McPsA==
   dependencies:
     enum "^2.5.0"
 
@@ -1539,9 +1539,9 @@ negotiator@0.6.2:
   integrity sha512-hZXc7K2e+PgeI1eDBe/10Ard4ekbfrrqG8Ep+8Jmf4JID2bNg7NvCPOZN+kfF574pFQI7mum2AUqDidoKqcTOw==
 
 node-fetch@^2.3.0, node-fetch@^2.6.0:
-  version "2.6.0"
-  resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.6.0.tgz#e633456386d4aa55863f676a7ab0daa8fdecb0fd"
-  integrity sha512-8dG4H5ujfvFiqDmVu9fQ5bOHUC15JMjMY/Zumv26oOvvVJjM67KF8koCWIabKQ1GJIa9r2mMZscBq/TbdOcmNA==
+  version "2.6.1"
+  resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.6.1.tgz#045bd323631f76ed2e2b55573394416b639a0052"
+  integrity sha512-V4aYg89jEoVRxRb2fJdAg8FHvI7cEyYdVAh94HH0UIK8oJxUfkjlDQN9RbMx+bEjP7+ggMiFRprSti032Oipxw==
 
 node-forge@^0.9.0:
   version "0.9.1"
